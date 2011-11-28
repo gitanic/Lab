@@ -5,7 +5,7 @@
 	</head>
 	<body>
 	<h1>Admin</h1>
-	<h2>Olá <?php echo $username; ?>!</h2>
+	<h2>Olá!</h2>
 	<?php echo anchor('admin/logout', 'Logout'); ?>
 
 
