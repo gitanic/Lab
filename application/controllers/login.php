@@ -22,13 +22,12 @@ class Login extends CI_Controller {
 		} else {
 			redirect('/admin/index', 'refresh');
 		}
-
 	}
 
 	function check_database($password) {
 		$username = $this->input->post('username');
 		$result = $this->users_model->login($username, $password);
-
+		
 		if($result) {
 			$sess_array = array();
 			foreach($result as $row) {
