@@ -1,15 +1,20 @@
-	<h1>Users</h1>
+	<h1>Usuarios</h1>
 	<table>
-		<tr
+		<tr>
 			<th>Id</th>
-			<th>Usuario</th>
+			
+			<th>username</th>
+			<th>password</th>
 		</tr>
-		<?php	foreach ($users as $user) { ?>
+		<?php	foreach ($users as $object) { ?>
 			<tr>
-			<td><?php echo $user->id ?></td>
-			<td><?php echo $user->username ?></td>
-			<td><?php echo anchor('/users/edit/'.$user->id, 'Edit'); ?></td>
-			<td><?php echo anchor('/users/destroy/'.$user->id, 'Destroy'); ?></td>
+			<td><?php echo $object->id ?></td>
+			
+			<td><?php echo $object->username ?></td>
+			<td><?php echo $object->password ?></td>
+			<td><?php echo anchor('/users/edit/'.$object->id, 'Edit'); ?></td>
+			<td><?php echo anchor('/users/destroy/'.$object->id, 'Destroy'); ?></td>
+			
 			</tr>
 		<?php } ?>
 	</table>

@@ -6,6 +6,12 @@
 	<body>
 	<h1>Admin</h1>
 	<h2>Olá!</h2>
+	<?php echo anchor('/press_release', 'Apoio'); ?>
+	<?php echo anchor('/about', 'O Clube'); ?>
+	<?php echo anchor('/drinks', 'Drinks'); ?>
+	<?php echo anchor('/users', 'Usuarios'); ?>
+	<br/>
+	
 	<?php echo anchor('admin/logout', 'Logout'); ?>
 
 

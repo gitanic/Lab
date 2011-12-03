@@ -1,22 +1,22 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Users extends CI_Controller {
+class About extends CI_Controller {
 
 	function __construct() { 
 		parent::__construct();
  		$this->load->helper('form');
 		$this->load->library('form_validation');
-		$this->load->model('users_model');
+		$this->load->model('about_model');
 	}
 
 	function index() {
-		$data['users'] = $this->users_model->find();
-		$data['content'] = 'users/index';
+		$data['about'] = $this->about_model->find();
+		$data['content'] = 'about/index';
 		$this->load->view('includes/admin/template', $data);
 	}
 
 	function create() {
-		$data['content'] = 'users/create';
+		$data['content'] = 'about/create';
 		$this->load->view('includes/admin/template', $data);
 	}
 
@@ -24,23 +24,23 @@ class Users extends CI_Controller {
 		$data[] = array();
 		$data['id'] = $this->input->post('id', TRUE);
 		
-		$data['username'] = $this->input->post('username', TRUE);
-		$data['password'] = $this->input->post('password', TRUE);
-		$this->users_model->save($data);
-		redirect('/users/index', 'refresh');
+		$data['title'] = $this->input->post('title', TRUE);
+		$data['body'] = $this->input->post('body', TRUE);
+		$this->about_model->save($data);
+		redirect('/about/index', 'refresh');
 	}
 
 	function edit() {
 		$id = $this->uri->segment(3);
-		$data['users'] = $this->users_model->find($id);
-		$data['content'] = 'users/create';
+		$data['about'] = $this->about_model->find($id);
+		$data['content'] = 'about/create';
 		$this->load->view('includes/admin/template', $data);
 	}
 
 	function destroy() {
 		$id = $this->uri->segment(3);
-		$data['users_model'] = $this->users_model->destroy($id);
-		redirect('/users/index', 'refresh');
+		$data['about_model'] = $this->about_model->destroy($id);
+		redirect('/about/index', 'refresh');
 	}
 }
 
