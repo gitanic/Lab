@@ -1,1 +1,1 @@
-footer page
+<div align="center">lab-club</div>

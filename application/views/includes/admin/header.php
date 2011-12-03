@@ -2,17 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Lab:Admin</title>
+		<style>
+			body {font-family:Arial} 
+			ul {list-style-type: none;margin: auto;}
+			li {float: left;padding:10px;}
+			.clear {clear:both}
+		</style>
 	</head>
 	<body>
 	<h1>Admin</h1>
 	<h2>Olá!</h2>
-	<?php echo anchor('/press_release', 'Apoio'); ?>
-	<?php echo anchor('/about', 'O Clube'); ?>
-	<?php echo anchor('/drinks', 'Drinks'); ?>
-	<?php echo anchor('/users', 'Usuarios'); ?>
-	<br/>
 	
-	<?php echo anchor('admin/logout', 'Logout'); ?>
-
-
-	
+	<ul>
+		<li><?php echo anchor('/press_release', 'Apoio'); ?></li>
+		<li><?php echo anchor('/about', 'O Clube'); ?></li>
+		<li><?php echo anchor('/drinks', 'Drinks'); ?></li>
+		<li><?php echo anchor('/users', 'Usuarios'); ?></li>
+		<li><?php echo anchor('admin/logout', 'Logout'); ?></li>
+	</ul>	
+	<div class="clear"></div>
